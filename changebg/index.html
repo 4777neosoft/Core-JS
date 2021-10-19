@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>change picture</title>
+</head>
+
+<body onload="changeImage()">
+    <div style="width: 400px;">
+        <img id="img" src="./1.jpg" style="width: 100%;" />
+    </div>
+    <script>
+        var images = [], x = -1;
+        images[0] = "./1.jpg";
+        images[1] = "./2.jpg";
+        images[2] = "./3.jpg";
+
+        function displayImge() {
+            x = (x === images.length - 1) ? 0 : x + 1;
+            document.getElementById("img").src = images[x];
+        }
+        function changeImage() {
+            setInterval(displayImge, 1000);
+        }
+    </script>
+</body>
+
+</html>
