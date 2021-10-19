@@ -3,26 +3,20 @@
 <html>
 
 <head>
-    <title>change picture</title>
+    <title>Change picture</title>
 </head>
 
-<body onload="changeImage()">
+<body>
     <div style="width: 400px;">
-        <img id="img" src="./1.jpg" style="width: 100%;" />
+        <img id="img" src=" " style="width: 100%;" />
     </div>
     <script>
-        var images = [], x = -1;
-        images[0] = "./1.jpg";
-        images[1] = "./2.jpg";
-        images[2] = "./3.jpg";
-
-        function displayImge() {
-            x = (x === images.length - 1) ? 0 : x + 1;
-            document.getElementById("img").src = images[x];
-        }
-        function changeImage() {
-            setInterval(displayImge, 1000);
-        }
+        let image = document.getElementById("img");
+        let images = ["./1.jpg", "./2.jpg", "./3.jpg"];
+        setInterval(() => {
+            let random = Math.floor(Math.random() * 3);
+            image.src = images[random];
+        }, 1000);
     </script>
 </body>
 
